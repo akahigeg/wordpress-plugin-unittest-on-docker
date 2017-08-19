@@ -12,7 +12,8 @@ services:
             WORDPRESS_DB_HOST: "db:3306"
         env_file: .env
         volumes:
-          - .:/var/www/html/wp-content/plugins/unittest-sample
+          - .:/var/www/html/wp-content/plugins/my-plugin
+          - for-testing:/tmp
     db:
         image: mysql:latest
         env_file: .env
@@ -22,3 +23,6 @@ services:
 volumes:
     db-data:
         driver: local
+    for-testing:
+        driver: local
+

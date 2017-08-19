@@ -10,17 +10,17 @@ Walkthrough: Scaffolding plugin tests and trying execute unit test.
 
 ### Scaffolding
 
-    dc exec wordpress wp scaffold plugin-tests unittest-sample --allow-root
+    dc exec wordpress wp scaffold plugin-tests my-plugin --allow-root
 
 ### Create empty plugin file
 
-    echo "<?php" > unittest-sample.php
+    echo "<?php" > my-plugin.php
 
 ### Setup test environment.
 
-    dc exec wordpress bash -c "/var/www/html/wp-content/plugins/unittest-sample/bin/install-wp-tests.sh wordpress_test root 'devpass' db latest"
+    dc exec wordpress bash -c "/var/www/html/wp-content/plugins/my-plugin/bin/install-wp-tests.sh wordpress_test root 'devpass' db latest"
 
 ### Try execute PHPUnit.
 
-    dc exec wordpress bash -c "cd /var/www/html/wp-content/plugins/unittest-sample; phpunit"
+    dc exec wordpress bash -c "cd /var/www/html/wp-content/plugins/my-plugin; phpunit"
 
